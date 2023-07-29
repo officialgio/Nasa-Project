@@ -10,6 +10,7 @@ function useLaunches(onSuccessSound, onAbortSound, onFailureSound) {
   const [launches, saveLaunches] = useState([]);
   const [isPendingLaunch, setPendingLaunch] = useState(false);
 
+  // Save the fetched launches
   const getLaunches = useCallback(async () => {
     const fetchedLaunches = await httpGetLaunches();
     saveLaunches(fetchedLaunches);
