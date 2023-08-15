@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { httpGetPlanets } from "./requests";
 
 function usePlanets() {
-  // saved state 
+  // saved state
   const [planets, savePlanets] = useState([]);
 
   const getPlanets = useCallback(async () => {
@@ -11,7 +11,7 @@ function usePlanets() {
     savePlanets(fetchedPlanets);
   }, []);
 
-  // call function right away when the program runs
+  // rerender all the time
   useEffect(() => {
     getPlanets();
   }, [getPlanets]);
