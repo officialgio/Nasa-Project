@@ -14,7 +14,7 @@ This is a Fullstack Project that replicates a NASA launch program. This project 
 * Have a MongoDB Cluster ready to use named as `nasa-api` and configure the secret key to your .env file at the `server` root.
 ```env
 PORT=8000
-MONGO_URL=mongodb+srv://nasa-api:OnwmGJHytvDgTLMC@nasacluster.zmf9elo.mongodb.net/?
+MONGO_URL=mongodb+srv://nasa-api:PASTEKEY_HERE@nasacluster.zmf9elo.mongodb.net/?...
 ```
 * Navigate to `server/src/services/mongo.js`.
 * Ensure that `process.env.MONGO_URL` contains your MongoDB cluster to make request to the REST API and get launches and planets from your database.
@@ -24,6 +24,7 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
+// Configure the secret key
 const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.connection.on("open", () => {
