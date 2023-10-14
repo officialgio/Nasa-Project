@@ -13,9 +13,6 @@ async function getLatestFlightNumber() {
   return flightNumber;
 }
 
-/**
- * @returns Newly Array of the map values from the launches map.
- */
 async function getAllLaunches(skip, limit) {
   return await launchesDatabase
     .find({}, { _id: 0, __v: 0 })
